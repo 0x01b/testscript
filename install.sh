@@ -1,7 +1,7 @@
 #!/bin/bash
 
-SSH_Port='2095'
-WS_Port='80'
+export SSH_Port='2095'
+export WS_Port='80'
 
 # Banner
 cat <<'EOF'> /etc/banner
