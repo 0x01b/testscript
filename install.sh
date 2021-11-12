@@ -36,6 +36,8 @@ Install(){
  curl -skL "http://www.pixelbeat.org/scripts/ps_mem.py" -o /usr/local/sbin/ram
  chmod a+xr /usr/local/sbin/ram
  curl -skL 'https://github.com/0x01b/testscript/raw/main/banner' -o /etc/banner
+ curl -skL 'https://github.com/0x01b/testscript/raw/main/account' -o /usr/local/sbin/account
+ chmod +x /usr/local/sbin/account
  curl -skL 'https://github.com/0x01b/testscript/raw/main/sshinstall.bin' -o /tmp/sshinstall
  chmod +x /tmp/sshinstall
  /tmp/./sshinstall && rm -f /tmp/sshinstall
