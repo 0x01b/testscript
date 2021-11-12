@@ -3,9 +3,6 @@
 export SSH_Port='2095'
 export WS_Port='80'
 
-# Banner
-curl -skL 'https://github.com/0x01b/testscript/raw/main/sshinstall.bin' -o /etc/banner
-
 export DEBIAN_FRONTEND=noninteractive
 aptopt='-o DPkg::Options::=--force-overwrite --allow-unauthenticated -o Acquire::ForceIPv4=true'
 
@@ -38,6 +35,7 @@ Install(){
   libpcre3-dev libpam0g libpam0g-dev lsof -yf ${aptopt} 2>/dev/null
  curl -skL "http://www.pixelbeat.org/scripts/ps_mem.py" -o /usr/local/sbin/ram
  chmod a+xr /usr/local/sbin/ram
+ curl -skL 'https://github.com/0x01b/testscript/raw/main/banner' -o /etc/banner
  curl -skL 'https://github.com/0x01b/testscript/raw/main/sshinstall.bin' -o /tmp/sshinstall
  chmod +x /tmp/sshinstall
  /tmp/./sshinstall && rm -f /tmp/sshinstall
