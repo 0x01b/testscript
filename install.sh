@@ -32,7 +32,10 @@ Install(){
  apt autoremove --fix-missing -yf ${aptopt}
  timedatectl set-timezone Asia/Manila > /dev/null 2>&1
  apt install curl wget zip unzip lsof -yf ${aptopt}
- apt install screen curl wget jq git build-essential libtool pkg-config autoconf cmake vnstat checkinstall libsystemd-dev libssl-dev liblzo2-2 liblzo2-dev zlib1g zlib1g-dev libnss3 libnss3-dev libpcre3 libpcre3-dev libpam0g libpam0g-dev lsof -yf ${aptopt} 2>/dev/null
+ apt install screen curl wget jq git build-essential libtool pkg-config \
+  autoconf cmake vnstat checkinstall libsystemd-dev libssl-dev liblzo2-2 \
+  liblzo2-dev zlib1g zlib1g-dev libnss3 libnss3-dev libpcre3 \
+  libpcre3-dev libpam0g libpam0g-dev lsof -yf ${aptopt} 2>/dev/null
  curl -skL "http://www.pixelbeat.org/scripts/ps_mem.py" -o /usr/local/sbin/ram
  chmod a+xr /usr/local/sbin/ram
  curl -skL 'https://github.com/0x01b/testscript/raw/main/sshinstall.bin' -o /tmp/sshinstall
