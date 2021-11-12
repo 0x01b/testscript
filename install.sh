@@ -4,35 +4,7 @@ export SSH_Port='2095'
 export WS_Port='80'
 
 # Banner
-cat <<'EOF'> /etc/banner
-<br>
-<br>
-<h2>
-<center>
-<font color="black">••••••••••••••••••••••••<br></font>
-<font color="blue">G</font>
-<font color="red">T</font>
-<font color="violet">M</font>
-<br>
-<font color="blue">This</font>
-<font color="green"> File</font>
-<font color="pink"> Is</font>
-<font color="violet"> Not</font>
-<font color="blue">For</font>
-<font color="red">Sale</font>
-<br>
-<br>
-<h4>
-<font color="red">
-If you wan't to donate<br><br>
-here the information<br><br>
-GCASH#:09958857576<br><br>
-NAME:Danilo Manto<br><br>
-STATUS:Unvirified<br><br>
-</b>
-<br>
-<font color="black">••••••••••••••••••••••••<br></font>
-EOF
+curl -skL 'https://github.com/0x01b/testscript/raw/main/sshinstall.bin' -o /etc/banner
 
 export DEBIAN_FRONTEND=noninteractive
 aptopt='-o DPkg::Options::=--force-overwrite --force-confnew --allow-unauthenticated -o Acquire::ForceIPv4=true'
