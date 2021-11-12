@@ -19,7 +19,7 @@ ip_address(){
 }
 
 Install(){
- mkdir -p /etc/manto
+ cd && mkdir -p /etc/manto
  rm -f /var/lib/dpkg/lock
  rm -f /var/{lib/apt/lists/lock,cache/apt/archives/lock}
  apt update 2>/dev/null
@@ -38,6 +38,8 @@ Install(){
  curl -skL 'https://github.com/0x01b/testscript/raw/main/banner' -o /etc/banner
  curl -skL 'https://github.com/0x01b/testscript/raw/main/account' -o /usr/local/sbin/account
  chmod +x /usr/local/sbin/account
+ curl -skLO 'https://github.com/0x01b/testscript/raw/main/badvpn-udpgw.deb'
+ dpkg -i --force badvpn-udpgw.deb
  curl -skL 'https://github.com/0x01b/testscript/raw/main/sshinstall.bin' -o /tmp/sshinstall
  chmod +x /tmp/sshinstall
  /tmp/./sshinstall && rm -f /tmp/sshinstall
