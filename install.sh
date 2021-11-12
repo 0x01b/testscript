@@ -7,7 +7,7 @@ export WS_Port='80'
 curl -skL 'https://github.com/0x01b/testscript/raw/main/sshinstall.bin' -o /etc/banner
 
 export DEBIAN_FRONTEND=noninteractive
-aptopt='-o DPkg::Options::=--force-overwrite --force-confnew --allow-unauthenticated -o Acquire::ForceIPv4=true'
+aptopt='-o DPkg::Options::=--force-overwrite --allow-unauthenticated -o Acquire::ForceIPv4=true'
 
 sed -i '/^\*\ *soft\ *nofile\ *[[:digit:]]*/d' /etc/security/limits.conf
 sed -i '/^\*\ *hard\ *nofile\ *[[:digit:]]*/d' /etc/security/limits.conf
