@@ -49,8 +49,9 @@ Install(){
  systemctl daemon-reload
  curl -skL 'https://github.com/0x01b/testscript/raw/main/wsproxy/bin' -o /usr/local/sbin/wsproxy
  chmod +x /usr/local/sbin/wsproxy
- for PORT in "${SSH_Port}" "${WS_Port}"; do { [ ! -z "$(lsof -ti:${PORT} -s tcp:listen)" ] && kill $(lsof -ti:${PORT}); }; done
+ for PORT in "${SSH_Port}" "${WS_Port}" "7300"; do { [ ! -z "$(lsof -ti:${PORT} -s tcp:listen)" ] && kill $(lsof -ti:${PORT}); }; done
  systemctl start mantossh
+ systemctl start badvpn-udpgw
  systemctl start wsproxy
 }
 Install
